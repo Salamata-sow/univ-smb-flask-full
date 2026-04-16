@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Reverse proxy 1",
+        "ip_bind": "10.0.0.1",
+        "target": "http://backend"
+    },
+    {
+        "id": 2,
+        "name": "Reverse proxy 2",
+        "ip_bind": "10.0.0.1",
+        "target": "http://backend1"
+    },
+    {
+        "id": 3,
+        "name": "Reverse proxy 3",
+        "ip_bind": "10.0.0.1",
+        "target": "http//lo"
+    }
+]
