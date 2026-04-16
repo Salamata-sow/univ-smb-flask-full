@@ -1,14 +1,73 @@
 {% extends "layout.html" %}
 {% block title %}Accueil{% endblock %}
-{% block head %}
-{{ super() }}
-{% endblock %}
+
 {% block content %}
-<div class="container">
-  <div class="row">
-    <div class="col">
-        Hello, WebSite !
+
+<div class="container mt-4">
+
+  <h1 class="text-center mb-4">🌐 Infrastructure Manager</h1>
+
+  <div class="row g-4">
+
+    <!-- LOAD BALANCER -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+
+        <div class="card-body text-center">
+
+          <h4>⚖️ Load Balancers</h4>
+          <p class="text-muted">Gérer les load balancers</p>
+
+          <a href="/lb"
+             class="btn btn-primary w-100 mb-2">
+            Gérer
+          </a>
+
+        </div>
+
+      </div>
     </div>
+
+    <!-- WEB SERVER -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+
+        <div class="card-body text-center">
+
+          <h4>🖥️ Web Servers</h4>
+          <p class="text-muted">Gérer les serveurs web</p>
+
+          <a href="/webserver"
+             class="btn btn-success w-100 mb-2">
+            Gérer
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- REVERSE PROXY -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+
+        <div class="card-body text-center">
+
+          <h4>🔁 Reverse Proxy</h4>
+          <p class="text-muted">Gérer les reverse proxies</p>
+
+          <a href="/reverseproxy"
+             class="btn btn-dark w-100 mb-2">
+            Gérer
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+
   </div>
+
 </div>
+
 {% endblock %}

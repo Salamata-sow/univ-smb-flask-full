@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>Liste Web Servers</h1>
+<!-- 🔥 BOUTON AJOUT (UNE SEULE FOIS) -->
+<div class="d-flex justify-content-end mb-3">
+  <a href="/lb/create" class="btn btn-success btn-sm">
+    Ajouter Web Server
+  </a>
+</div>
+
+<div class="container">
+
+  <div class="row">
+
+    {% for ws in servers %}
+    <div class="col-md-4 mb-3">
+
+      <div class="card shadow-sm h-100">
+
+        <div class="card-body d-flex flex-column">
+
+          <h5 class="card-title">{{ ws.name }}</h5>
+
+          <p class="card-text">
+            <b>IP :</b> {{ ws.ip_bind }} <br>
+            <b>Root :</b> {{ ws.root }}
+          </p>
+
+          <!-- bouton détail -->
+          <a href="/webserver/{{ ws.id }}"
+             class="btn btn-primary btn-sm shadow-sm rounded-pill px-3 mb-2">
+            🔧 Voir détail
+          </a>
+
+          <!-- bouton delete -->
+          <a href="/webserver/delete/{{ ws.id }}"
+             class="btn btn-danger btn-sm shadow-sm rounded-pill px-3 mt-auto">
+            Delete
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+    {% endfor %}
+
+  </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1> Ajouter un Web Server</h1>
+
+<div class="container mt-4">
+
+  <form method="POST" class="card p-4 shadow-sm">
+
+    <div class="mb-3">
+      <label class="form-label">ID</label>
+      <input type="number" name="id" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Nom</label>
+      <input type="text" name="name" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">IP Bind</label>
+      <input type="text" name="ip_bind" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Root</label>
+      <input type="text" name="root" class="form-control" required>
+    </div>
+
+    <button type="submit" class="btn btn-success w-100">
+      Créer
+    </button>
+
+  </form>
+
+</div>
+
+{% endblock %}

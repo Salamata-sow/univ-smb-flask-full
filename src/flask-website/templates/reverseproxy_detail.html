@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1 class="mb-3">🔁 Reverse Proxy Detail</h1>
+
+<div class="card shadow-sm p-3">
+
+  <h4>{{ rp.name }}</h4>
+
+  <p><b>IP Bind :</b> {{ rp.ip_bind }}</p>
+  <p><b>Target :</b> {{ rp.target }}</p>
+
+  <hr>
+
+  <h5>🧠 Configuration Nginx</h5>
+
+  <pre class="bg-light p-3 rounded">
+server {
+    listen 80;
+
+    server_name {{ rp.ip_bind }};
+
+    location / {
+        proxy_pass {{ rp.target }};
+    }
+}
+  </pre>
+
+  <a href="/reverseproxy" class="btn btn-secondary mt-3">
+    ⬅ Retour
+  </a>
+
+</div>
+
+{% endblock %}

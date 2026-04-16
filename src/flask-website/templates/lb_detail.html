@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>{{ lb.name }}</h1>
+
+<h3>Configuration Nginx</h3>
+
+<pre>
+upstream backend {
+    server {{ lb.ip_bind }};
+}
+
+server {
+    listen 80;
+
+    location / {
+        proxy_pass {{ lb.pass }};
+    }
+}
+</pre>
+
+{% endblock %}

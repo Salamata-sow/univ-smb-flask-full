@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>⚙️ {{ ws.name }}</h1>
+
+<div class="card p-3">
+
+  <h4>Informations</h4>
+
+  <ul>
+    <li><b>ID :</b> {{ ws.id }}</li>
+    <li><b>IP bind :</b> {{ ws.ip_bind }}</li>
+    <li><b>Root :</b> {{ ws.root }}</li>
+  </ul>
+
+</div>
+
+<hr>
+
+<h4>📦 Configuration Nginx générée</h4>
+
+<pre style="background:#f4f4f4; padding:15px; border-radius:5px;">
+server {
+    listen 80;
+    server_name {{ ws.ip_bind }};
+
+    root {{ ws.root }};
+    index index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+</pre>
+
+<a href="/webserver" class="btn btn-secondary mt-3">
+  ← Retour
+</a>
+
+{% endblock %}
